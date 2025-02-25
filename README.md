@@ -8,6 +8,7 @@ To set up a project using `uv`, follow these steps:
 uv init myProject -p 3.12.0
 cd myProject
 uv add kokoro
+uv add soundfile
 ```
 
 ## **Usage Example**  
