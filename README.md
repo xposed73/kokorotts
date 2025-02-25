@@ -7,9 +7,6 @@
 ```bash
 uv init myProject -p 3.12.0
 cd myProject
-```
-
-```shell
 uv add kokoro
 ```
 
