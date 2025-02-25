@@ -11,6 +11,7 @@ uv add kokoro
 ```
 
 ## Sample code
+### copy and paste this coe to main.py
 ```python
 from kokoro import KPipeline
 import soundfile as sf
