@@ -5,8 +5,12 @@
 ## create a project using uv
 
 ```bash
-ud init myProject -p 3.12.0
+uv init myProject -p 3.12.0
 cd myProject
+```
+
+```shell
+uv add kokoro
 ```
 
 ## Sample code
