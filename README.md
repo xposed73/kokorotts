@@ -11,7 +11,8 @@ uv add kokoro
 ```
 
 ## Sample code
-### copy and paste this coe to main.py
+### copy and paste this code inside main.py
+
 ```python
 from kokoro import KPipeline
 import soundfile as sf
@@ -31,4 +32,9 @@ generator = pipeline(
 for i, (gs, ps, audio) in enumerate(generator):
     sf.write(f'{i}.wav', audio, 24000) # save each audio file
 
+```
+
+### open your terminal and hit the command
+```bash
+uv run main.py
 ```
