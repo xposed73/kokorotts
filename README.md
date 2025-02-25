@@ -1,8 +1,8 @@
-# KOKORO TTS - Simple usage
+# **KOKORO TTS - Quick Start Guide**  
 
-# Installation
+## **Installation**  
 
-## create a project using uv
+To set up a project using `uv`, follow these steps:  
 
 ```bash
 uv init myProject -p 3.12.0
@@ -10,31 +10,46 @@ cd myProject
 uv add kokoro
 ```
 
-## Sample code
-### copy and paste this code inside main.py
+## **Usage Example**  
+
+### **1. Create and edit `main.py`**  
+
+Copy and paste the following code into `main.py`:  
 
 ```python
 from kokoro import KPipeline
 import soundfile as sf
-# 🇺🇸 'a' => American English, 🇬🇧 'b' => British English
-# 🇯🇵 'j' => Japanese: pip install misaki[ja]
-# 🇨🇳 'z' => Mandarin Chinese: pip install misaki[zh]
-pipeline = KPipeline(lang_code='b') # <= make sure lang_code matches voice
 
-# This text is for demonstration purposes only, unseen during training
+# Language Code Options:
+# 🇺🇸 'a' => American English  
+# 🇬🇧 'b' => British English  
+# 🇯🇵 'j' => Japanese (Requires: pip install misaki[ja])  
+# 🇨🇳 'z' => Mandarin Chinese (Requires: pip install misaki[zh])  
+
+pipeline = KPipeline(lang_code='b')  # Ensure the lang_code matches the selected voice  
+
+# Sample text for demonstration
 text = '''
 Blaa, blaa, blaa, blaa....
 '''
+
+# Generate speech
 generator = pipeline(
     text, voice='bf_lily',
     speed=1, split_pattern=r'\n+'
 )
-for i, (gs, ps, audio) in enumerate(generator):
-    sf.write(f'{i}.wav', audio, 24000) # save each audio file
 
+# Save each generated audio file
+for i, (gs, ps, audio) in enumerate(generator):
+    sf.write(f'{i}.wav', audio, 24000)
 ```
 
-### open your terminal and hit the command
+### **2. Run the script**  
+
+Open your terminal and execute the following command:  
+
 ```bash
 uv run main.py
 ```
+
+This will generate audio files from the provided text.
