@@ -1,6 +1,6 @@
-KOKORO TTS - Simple usage
+# KOKORO TTS - Simple usage
 
-Sample code
+## Sample code
 ```python
 from kokoro import KPipeline
 import soundfile as sf
